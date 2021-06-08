@@ -13,12 +13,8 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "items")
-public class Item {
+public class Item extends BaseEntity{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Integer id;
     @Column(name = "code")
     private String code;
     @Column(name = "name")
@@ -28,7 +24,8 @@ public class Item {
     @Column(name = "availability")
     private Integer availability;
 
-    public Item(String code, String name, Integer price, Integer availability) {
+    public Item(Integer id, String code, String name, Integer price, Integer availability) {
+        super(id);
         this.code = code;
         this.name = name;
         this.price = price;
