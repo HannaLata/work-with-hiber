@@ -21,10 +21,10 @@ class UserDAOTest {
         users.add(user);
     }
 
-    @AfterEach
-    void tearDown() {
-        users.forEach(it -> UserDAO.delete(it));
-    }
+    //@AfterEach
+    //void tearDown() {
+    //   users.forEach(it -> UserDAO.delete(it));
+    //}
 
     @Test
     void saveAndGetAndDelete() {
